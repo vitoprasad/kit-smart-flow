@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -8,8 +7,8 @@ const NotificationScreen = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md animate-in fade-in duration-300 border-2 border-inventory-blue">
-        <CardHeader className="bg-inventory-blue text-white text-center py-6">
+      <Card className="w-full max-w-md animate-in fade-in duration-300 border-2 border-inventory-green">
+        <CardHeader className="bg-inventory-green text-white text-center py-6">
           <div className="flex justify-center mb-3">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-inventory-blue">
@@ -23,20 +22,20 @@ const NotificationScreen = () => {
         </CardHeader>
         <CardContent className="py-6">
           <div className="space-y-4">
-            <div className="border-l-4 border-inventory-blue pl-3 py-1">
+            <div className="border-l-4 border-inventory-green pl-3 py-1">
               <p className="text-lg font-medium">Prepare Kit #12432</p>
               <p className="text-gray-600">For Assembly Line 3</p>
             </div>
             
-            <div className="bg-blue-50 p-3 rounded-md">
+            <div className="bg-green-50 p-3 rounded-md">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-inventory-blue rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-inventory-green rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </div>
-                <p className="text-inventory-blue font-medium">7 parts required • Priority: High</p>
+                <p className="text-inventory-green font-medium">7 parts required • Priority: High</p>
               </div>
             </div>
 
@@ -48,7 +47,7 @@ const NotificationScreen = () => {
         </CardContent>
         <CardFooter>
           <Button 
-            className="w-full bg-inventory-blue hover:bg-inventory-blue/90 text-white" 
+            className="w-full bg-inventory-green hover:bg-inventory-green/90 text-white" 
             size="lg"
             onClick={() => navigate("/kit-checklist")}
           >

@@ -133,7 +133,7 @@ const SearchLocateScreen = () => {
         </Card>
 
         <Button 
-          className="w-full bg-inventory-blue hover:bg-inventory-blue/90"
+          className="w-full bg-inventory-green hover:bg-inventory-green/90"
           size="lg" 
           onClick={() => navigate("/kit-verification")}
         >

@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -8,7 +7,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 flex flex-col">
-      <header className="bg-inventory-blue text-white p-4 rounded-lg shadow-md mb-6">
+      <header className="bg-inventory-green text-white p-4 rounded-lg shadow-md mb-6">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold">Smart Inventory Kitting</h1>
           <button className="p-2 rounded-full hover:bg-white/10">
@@ -65,7 +64,7 @@ const Index = () => {
       
       <div className="space-y-4">
         <Button 
-          className="w-full bg-inventory-blue hover:bg-inventory-blue/90 h-14 text-lg"
+          className="w-full bg-inventory-green hover:bg-inventory-green/90 h-14 text-lg"
           onClick={() => navigate("/notification")}
         >
           Start Prototype Demo

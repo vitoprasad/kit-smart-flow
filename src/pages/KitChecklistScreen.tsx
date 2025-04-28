@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import AppHeader from "@/components/AppHeader";
@@ -71,7 +70,7 @@ const KitChecklistScreen = () => {
               <h2 className="text-lg font-semibold">Kit #12432</h2>
               <p className="text-sm text-gray-500">7 parts required</p>
             </div>
-            <div className="bg-inventory-blue text-white px-3 py-1 rounded text-sm font-medium">
+            <div className="bg-inventory-green text-white px-3 py-1 rounded text-sm font-medium">
               In Progress
             </div>
           </div>
@@ -124,8 +123,15 @@ const KitChecklistScreen = () => {
           ))}
         </div>
 
+        <div className="flex items-center justify-center mb-6">
+          <div className="w-12 h-1 bg-gray-200 rounded-full mx-1"></div>
+          <div className="w-12 h-1 bg-gray-200 rounded-full mx-1"></div>
+          <div className="w-12 h-1 bg-inventory-green rounded-full mx-1"></div>
+          <div className="w-12 h-1 bg-gray-200 rounded-full mx-1"></div>
+        </div>
+
         <Button 
-          className="w-full bg-inventory-blue hover:bg-inventory-blue/90" 
+          className="w-full bg-inventory-green hover:bg-inventory-green/90"
           size="lg"
           onClick={() => navigate("/search-locate")}
         >

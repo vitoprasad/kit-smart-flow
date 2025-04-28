@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -103,7 +102,7 @@ const KitVerificationScreen = () => {
           </div>
 
           <Button 
-            className="w-full bg-inventory-blue hover:bg-inventory-blue/90"
+            className="w-full bg-inventory-green hover:bg-inventory-green/90"
             size="lg"
             disabled={!photoTaken || !verified}
             onClick={handleComplete}
