@@ -1,9 +1,11 @@
-
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import AppHeader from "@/components/AppHeader";
 import KitPart from "@/components/KitPart";
+import ScanPart from "@/components/ScanPart";
 import { Card } from "@/components/ui/card";
+import { toast } from "sonner";
 
 const partsData = [
   {
@@ -59,9 +61,17 @@ const partsData = [
 
 const KitChecklistScreen = () => {
   const navigate = useNavigate();
+  const [scannedParts, setScannedParts] = useState<string[]>([]);
+
+  const handleScan = (partId: string) => {
+    setScannedParts(prev => [...prev, partId]);
+    toast.success("Part scanned successfully", {
+      description: `Part ${partId} has been added to the kit`,
+    });
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="min-h-screen bg-gray-100 flex flex-col pb-24">
       <AppHeader title="Kit Checklist: Assembly Line 3" />
       
       <div className="p-5">
@@ -120,6 +130,7 @@ const KitChecklistScreen = () => {
               quantity={part.quantity}
               location={part.location}
               status={part.status}
+              isScanned={scannedParts.includes(part.partName.split(" ")[1])}
             />
           ))}
         </div>
@@ -132,7 +143,7 @@ const KitChecklistScreen = () => {
         </div>
 
         <Button 
-          className="w-full bg-inventory-green hover:bg-inventory-green/90 text-white text-lg py-8"
+          className="w-full bg-inventory-green hover:bg-inventory-green/90 text-white text-lg py-8 mb-4"
           size="lg"
           onClick={() => navigate("/search-locate")}
         >
@@ -143,6 +154,8 @@ const KitChecklistScreen = () => {
           Start Locating Parts
         </Button>
       </div>
+
+      <ScanPart onScan={handleScan} />
     </div>
   );
 };

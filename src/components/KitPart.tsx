@@ -9,21 +9,31 @@ interface KitPartProps {
   quantity: number;
   location: string;
   status: "in-stock" | "low-stock" | "missing";
+  isScanned?: boolean;
 }
 
-export const KitPart = ({ partName, quantity, location, status }: KitPartProps) => {
+export const KitPart = ({ partName, quantity, location, status, isScanned }: KitPartProps) => {
   const [isFound, setIsFound] = useState(false);
 
   return (
     <div className={cn(
       "border rounded-lg p-4 mb-3 transition-all", 
-      isFound 
-        ? "bg-green-50 border-green-200" 
-        : "bg-white border-gray-200"
+      isScanned 
+        ? "bg-green-50 border-inventory-green"
+        : isFound 
+          ? "bg-green-50 border-green-200" 
+          : "bg-white border-gray-200"
     )}>
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-medium text-lg">{partName}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="font-medium text-lg">{partName}</h3>
+            {isScanned && (
+              <span className="bg-inventory-green text-white text-sm px-2 py-1 rounded">
+                Scanned
+              </span>
+            )}
+          </div>
           <div className="flex flex-col space-y-1 mt-2 text-sm text-gray-500">
             <div>Qty: {quantity}</div>
             <div>Location: {location}</div>
