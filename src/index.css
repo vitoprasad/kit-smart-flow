@@ -21,7 +21,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215.4 16.3% 55%;
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -29,8 +29,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 85%;
+    --input: 214.3 31.8% 85%;
     --ring: 196 85% 31%;
 
     --radius: 0.5rem;
@@ -91,5 +91,34 @@
 
   body {
     @apply bg-background text-foreground;
+    font-size: 16px;
+  }
+  
+  /* Improve touch targets for better accessibility with gloves */
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea {
+    @apply min-h-[44px] touch-manipulation;
+  }
+}
+
+/* Factory-floor friendly styles */
+@layer components {
+  .factory-card {
+    @apply shadow-md border-l-4 border-l-inventory-green bg-white p-5 rounded-md;
+  }
+  
+  .factory-button {
+    @apply h-14 min-w-[44px] px-5 py-3 text-lg font-medium rounded-md;
+  }
+  
+  .factory-input {
+    @apply h-14 px-4 py-3 text-lg rounded-md border-2;
+  }
+  
+  .status-indicator {
+    @apply w-3 h-3 rounded-full mr-2;
   }
 }

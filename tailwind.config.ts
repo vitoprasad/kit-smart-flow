@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				inventory: {
-					blue: '#16A34A', // Changed to the new green color
+					blue: '#16A34A', // This is actually green now, keeping the name for compatibility
 					orange: '#F97316',
 					green: '#16A34A',
 					yellow: '#FBBF24',
@@ -101,7 +102,20 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-			}
+			},
+			fontSize: {
+				xs: '0.875rem',
+				sm: '1rem',
+				base: '1.125rem',
+				lg: '1.25rem',
+				xl: '1.5rem',
+				'2xl': '1.75rem',
+				'3xl': '2rem',
+			},
+			spacing: {
+				'14': '3.5rem',
+				'18': '4.5rem',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
